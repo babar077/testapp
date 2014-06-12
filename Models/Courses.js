@@ -1,8 +1,5 @@
- var mongoose = require('mongoose');
-  var db = mongoose.connect('mongodb://localhost/test');
-
-
-var coursesSchema = new mongoose.Schema({
+ var mongoose = require('..connection/connection.js');
+ var coursesSchema = new mongoose.Schema({
   attributes: {
     courseName:'STRING',
     type:'String',
@@ -10,16 +7,4 @@ var coursesSchema = new mongoose.Schema({
  }
 });
 var Courses = mongoose.model('Courses', coursesSchema);
-var English = new Student({
-     courseName: 'play',
-     type: 'abc',
-     startDate:'12-12-2014'
-
- });
- English.save(function(err) {
-     if (err) console.log('Error on save!')
- });
-
-
-
-// module.exports = Subjects;
+module.exports = Courses;

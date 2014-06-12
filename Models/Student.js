@@ -1,12 +1,5 @@
- var mongoose = require('mongoose');
-  var db = mongoose.connect('mongodb://localhost/test');
-
-
-
- // var Schema = mongoose.Schema,
- //     ObjectId = Schema.ObjectId;
-
- var studentSchema = new mongoose.Schema({
+ var mongoose = require('..connection/connection.js');
+  var studentSchema = new mongoose.Schema({
      attributes: {
          firstName: 'STRING',
          sex: 'STRING'
@@ -23,15 +16,19 @@
      }
  });
  var Student = mongoose.model('Student', studentSchema);
- var Data = new Student({
-     firstName: 'data',
-     sex: 'male',
-     age: 23
 
- });
- Data.save(function(err) {
-     if (err) console.log('Error on save!')
- });
+ module.exports = Student;
+
+
+ // var Data = new Student({
+ //     firstName: 'data',
+ //     sex: 'male',
+ //     age: 23
+
+ // });
+ // Data.save(function(err) {
+ //     if (err) console.log('Error on save!')
+ // });
 
 
 //  Student.find({}).exec(function(err, result) {

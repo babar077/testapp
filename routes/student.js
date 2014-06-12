@@ -1,18 +1,19 @@
 exports.showStudents=function(req,res){
 res.render('student.html');
-	
+	}
+var Student = mongoose.model('Student', studentSchema);
+ var Data = new Student({
+     firstName: 'data',
+     sex: 'male',
+     age: 23
+
+ });
+  Data.save(function(err) {
+     if (err) console.log('Error on save!')
+ });
+         
 
 
 
-    }
-// exports.addStudents = function(req, res) {
-//     var record = new studentScehma{
-//         console.log(req.body);
-//          db.Student.create({
-//         fistName:request.body.firstname,
-//         Sex:request.body.sex,
-//         Age:request.body.Age,
-//         emailAddress:request.body.emailaddress
-//     });
-//     }
+
    
