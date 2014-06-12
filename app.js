@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 // app.get('/student', student.showStudents);
 app.get('/student', student.addStudents);
-// app.get('/courses', courses.showCourses);
+app.get('/courses', courses.addCourses);
 // app.post('/courses', courses.addCourses)
 
 app.listen(4000, function() {
