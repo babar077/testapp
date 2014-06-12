@@ -11,7 +11,7 @@ var mongoose = require('mongoose')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var student = require('./routes/student');
-var courses = require('./routes/courses');
+var course = require('./routes/courses');
 var app = express();
 var cons = require('consolidate');
 
@@ -25,11 +25,14 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
-// app.get('/student', student.showStudents);
-app.get('/student', student.addStudents);
-app.get('/courses', courses.addCourses);
-// app.post('/courses', courses.addCourses)
+/* Students */
+app.get('/student/add', student.addStudents);
+// app.get('/student/list/all', student.listAll);
+
+/* Courses */
+// app.get('/course/list/all', course.listAll);
+app.get('/course/add', course.addCourses);
+
 
 app.listen(4000, function() {
     console.log('message:"Server is live and Ready" ')
