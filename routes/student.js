@@ -20,24 +20,16 @@ exports.addStudents = function(req, res) {
 
 };
 exports.listAll = function(req, res) {
-    // Student.findAll({
+    Student.find({
 
-    // }, function(err, student) {
-    //     console.log(student)
+    }, function(err, student) {
+        console.log(student)
 
-    // });
-    Student.find({}).exec(function(err, result) {
-        if (!err) {
-            // handle result
-        } else {
-            console.log(result);
-        };
     });
 
 }
 exports.getStudent = function(req, res) {
     Student.find({
-        'firstName': 'babar'
     }, function(err, student) {
         console.log(student)
     })

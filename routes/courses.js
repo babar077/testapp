@@ -15,6 +15,21 @@ exports.addCourses = function(req, res) {
     });
 
 };
+exports.listAll = function(req, res) {
+    Courses.find({
+
+    }, function(err, courses) {
+        console.log(courses)
+
+    });
+
+}
+exports.getCourses = function(req, res) {
+    Courses.find({
+    }, function(err, courses) {
+        console.log(courses)
+    })
+}
 
 
 

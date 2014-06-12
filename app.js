@@ -11,7 +11,7 @@ var mongoose = require('mongoose')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var student = require('./routes/student');
-var course = require('./routes/courses');
+var courses = require('./routes/courses');
 var app = express();
 var cons = require('consolidate');
 
@@ -32,9 +32,9 @@ app.get('/student/list/:name', student.getStudent);
 
 
 /* Courses */
-// app.get('/course/list/all', course.listAll);
-app.get('/course/add', course.addCourses);
-// app.get('/course/:name', course.getCourse);
+app.get('/courses/list/all', courses.listAll);
+app.get('/courses/add', courses.addCourses);
+app.get('/courses/:name', courses.getCourses);
 
 
 app.listen(4000, function() {
