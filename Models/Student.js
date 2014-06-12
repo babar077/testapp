@@ -1,8 +1,18 @@
- var mongoose = require('..connection/connection.js');
+ var mongoose = require('../connection/connection.js');
+ 
  var studentSchema = new mongoose.Schema({
-    firstName: {
-        type: 'String'
-    }
+     firstName: {
+         type: 'String'
+     },
+     sex: {
+         type: 'String'
+     },
+     age: {
+         type: 'String'
+     },
+     emailAddress: {
+         type: 'String'
+     }
      // firstName: 'STRING',
      // sex: 'STRING'
      // age: {

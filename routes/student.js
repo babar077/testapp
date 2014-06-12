@@ -1,20 +1,20 @@
-
-
+var Student = require('../Models/Student');
 exports.showStudents = function(req, res) {
     res.render('student.html');
-}
+};
 
 
 exports.addStudents = function(req, res) {
-    var Student = mongoose.model('Student', studentSchema);
-    var Data = new Student({
-        firstName: 'data',
-        sex: 'male',
-        age: 23
-
+    var data = new Student({
+        firstName: 'Sultan Saadat',
+        sex: 'Male',
+        age: '21',
+        emailAddress: 'sultansaadat@gmail.com'
     });
-    Data.save(function(err) {
-        if (err) console.log('Error on save!')
+
+    data.save(function(err, doc) {
+        console.log(doc);
+        res.send(doc);
     });
 
 };
