@@ -27,11 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Students */
 app.get('/student/add', student.addStudents);
-// app.get('/student/list/all', student.listAll);
+app.get('/student/list/all', student.listAll);
+app.get('/student/list/:name', student.getStudent);
+
 
 /* Courses */
-// app.get('/course/list/all', course.listAll);
+app.get('/course/list/all', course.listAll);
 app.get('/course/add', course.addCourses);
+app.get('/course/:name', course.getCourse);
 
 
 app.listen(4000, function() {
