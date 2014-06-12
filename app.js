@@ -32,9 +32,9 @@ app.get('/student/list/:name', student.getStudent);
 
 
 /* Courses */
-app.get('/course/list/all', course.listAll);
+// app.get('/course/list/all', course.listAll);
 app.get('/course/add', course.addCourses);
-app.get('/course/:name', course.getCourse);
+// app.get('/course/:name', course.getCourse);
 
 
 app.listen(4000, function() {
